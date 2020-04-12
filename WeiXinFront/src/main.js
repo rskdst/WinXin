@@ -37,8 +37,8 @@ axios.interceptors.response.use(
     return response;
   },
   error => {
-    let status = error.response.data.status;
-    if(status === "4"){
+    let code = error.response.data.data.code;
+    if(code === "-1"){
       console.log("token认证失败，等重新登陆");
       router.push({path:"./login"});
     }

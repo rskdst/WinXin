@@ -7,16 +7,30 @@
 """接口规范"""
 
 """
-参数：
-    status:执行状态
-        0：请求成功
-        1：创建成功
-        -1：创建失败 
-        2：禁止访问
-        3：资源未找到
-        4：需要认证
-    msg:执行信息
-    data:返回数据
+ response：
+----------------------------------------
+{
+   status: 200,               // 详见【status】
+
+   data: {
+      code: 1,                // 详见【code】
+      data: {} || [],         // 数据
+      message: '成功',        // 存放响应信息提示,显示给客户端用户【须语义化中文提示】
+      ...                     // 其它参数，如 total【总记录数】等
+   },
+
+   msg: '成功',            // 存放响应信息提示,显示给客户端用户【须语义化中文提示】
+}
+----------------------------------------
+【status】:
+           200: OK       400: Bad Request        500：Internal Server Error       
+                         401：Unauthorized
+                         403：Forbidden
+                         404：Not Found
+
+【code】:
+         1: 获取数据成功 | 操作成功             0：获取数据失败 | 操作失败
+         -1： token获取失败 | 重新登录
 """
 
 
@@ -61,11 +75,11 @@ class JwtAuthentication(BaseAuthentication):
         try:
             payload = jwt.decode(bytes(token, encoding="utf-8"), settings.SECRET_KEY, True, algorithms=["HS512"], )
         except exceptions.ExpiredSignatureError:
-            raise AuthenticationFailed({"status": 4, "msg": "token已失效", "data": {}})
+            raise AuthenticationFailed({"status": 403, "msg": "token已失效", "data": {"code":-1,"data":{},"message":"token已失效"}})
         except jwt.DecodeError:
-            raise AuthenticationFailed({"status": 4, "msg": "token认证失败", "data": {}})
+            raise AuthenticationFailed({"status": 403, "msg": "token认证失败", "data": {"code":-1,"data":{},"message":"token认证失败"}})
         except jwt.InvalidTokenError:
-            raise AuthenticationFailed({"status": 4, "msg": "非法的token", "data": {}})
+            raise AuthenticationFailed({"status": 403, "msg": "非法的token", "data": {"code":-1,"data":{},"message":"非法的token"}})
         return (payload, token)
 
 

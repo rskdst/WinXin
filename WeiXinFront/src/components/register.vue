@@ -115,7 +115,7 @@
             phone: this.messageDict.phone,
             avatar: this.messageDict.avatar,
           },).then(res => {
-            if (res.status === 1) {
+            if (res.status === 200) {
               console.log("用户创建成功！");
               this.$router.push({path: "/login"})
             } else {

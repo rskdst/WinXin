@@ -64,10 +64,13 @@
               phone: this.phone,
               password: this.password
             }).then(res => {
-              if (res.status === 0){
+              if (res.status === 200){
                 console.log("登陆成功");
-                let token = res.data.token;
-                localStorage.setItem("token",token);
+                if(res.data.data.token){
+                  console.log("token已存在");
+                  let token = res.data.data.token;
+                  localStorage.setItem("token",token);
+                }
                 console.log(res);
                 this.$router.push({path:"/"})
               }else {

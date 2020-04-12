@@ -22,8 +22,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Permission/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="491">
-                  <caret line="56" column="34" lean-forward="true" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
+                <state relative-caret-position="183">
+                  <caret line="42" column="69" selection-start-line="42" selection-start-column="65" selection-end-line="42" selection-end-column="69" />
                   <folding>
                     <element signature="e#0#9#0" expanded="true" />
                   </folding>
@@ -71,8 +71,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/WeiXin/API.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="352">
-                  <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+                <state relative-caret-position="198">
+                  <caret line="81" column="92" selection-start-line="81" selection-start-column="92" selection-end-line="81" selection-end-column="92" />
                 </state>
               </provider>
             </entry>
@@ -138,6 +138,11 @@
             <path>
               <item name="WeiXinBack" type="b2602c69:ProjectViewProjectNode" />
               <item name="WeiXinBack" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WeiXinBack" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WeiXinBack" type="462c0819:PsiDirectoryNode" />
+              <item name="Permission" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -270,12 +275,12 @@
       <workItem from="1586515382920" duration="1993000" />
       <workItem from="1586590247025" duration="21439000" />
       <workItem from="1586615154419" duration="13814000" />
-      <workItem from="1586670356640" duration="996000" />
+      <workItem from="1586670356640" duration="2825000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78489000" />
+    <option name="totallyTimeSpent" value="80318000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -290,12 +295,12 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12140575" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12140575" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32937366" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32937366" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39956802" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -502,15 +507,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WeiXin/API.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+        <state relative-caret-position="198">
+          <caret line="81" column="92" selection-start-line="81" selection-start-column="92" selection-end-line="81" selection-end-column="92" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Permission/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="56" column="34" lean-forward="true" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
+        <state relative-caret-position="183">
+          <caret line="42" column="69" selection-start-line="42" selection-start-column="65" selection-end-line="42" selection-end-column="69" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
