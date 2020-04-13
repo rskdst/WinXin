@@ -1,7 +1,7 @@
 <template>
   <div class="content">
-    <h4>微信</h4>
-    <span>({{setMsgNum}})</span>
+    <h4>{{setName}}</h4>
+    <span v-show="numShow">({{setMsgNum}})</span>
     <ul>
       <li><img src="@/assets/weixin/添加.png"></li>
       <li><img src="@/assets/weixin/搜索.png"></li>
@@ -14,10 +14,11 @@
     name: "biaoti",
     props: [
       'setMsgNum',
+      'setName',
+      'numShow'
     ],
     data() {
       return {
-
       }
     },
     methods: {

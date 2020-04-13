@@ -55,7 +55,7 @@
     methods: {
       changeIndex(index) {
         this.index = index;
-        this.$emit("switch", this.index)
+        this.$emit("switch", this.index,this.list[this.index])
       }
     }
   }
