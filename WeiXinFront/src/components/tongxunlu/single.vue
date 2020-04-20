@@ -22,20 +22,22 @@ export default {
 <style scoped>
 div {
   width: 100%;
-  height: 50px;
+  height: 1.5rem;
 }
 img {
-  width: 40px;
-  height: 40px;
+  width: 1.3rem;
+  height: 1.3rem;
   float: left;
-  margin: 5px 10px;
-  border-radius: 5px;
+  margin: 0.1rem 0.1rem;
+  border-radius: 0.2rem;
 }
 p {
   float: left;
-  width: 315px;
-  height: 49px;
-  line-height: 49px;
-  border-bottom: 1px solid #e6e6e6;
+  padding-left: 0.3rem;
+  width: 8.2rem;
+  height: 1.5rem;
+  font-size: 0.5rem;
+  line-height: 1.5rem;
+  border-bottom: 1px solid #dedede;
 }
 </style>

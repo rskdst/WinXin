@@ -1,9 +1,8 @@
 package com.weixin.springbootweixin.utils;
 
 import com.weixin.springbootweixin.entity.ExceptionApi;
-import com.weixin.springbootweixin.utils.jwtUtils;
 import com.weixin.springbootweixin.config.JwtIgnore;
-import com.weixin.springbootweixin.config.jwtConfig;
+import com.weixin.springbootweixin.config.JwtConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.BeanFactory;
@@ -23,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 public class JwtInterceptor extends HandlerInterceptorAdapter{
 
     @Autowired
-    private jwtConfig jwtConfig;
+    private JwtConfig jwtConfig;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -53,7 +52,7 @@ public class JwtInterceptor extends HandlerInterceptorAdapter{
 
         if(jwtConfig == null){
             BeanFactory factory = WebApplicationContextUtils.getRequiredWebApplicationContext(request.getServletContext());
-            jwtConfig = (jwtConfig) factory.getBean("jwtConfig");
+            jwtConfig = (JwtConfig) factory.getBean("JwtConfig");
         }
 
         // 验证token是否有效--无效已做异常抛出，由全局异常处理后返回对应信息

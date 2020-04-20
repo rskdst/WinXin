@@ -14,5 +14,5 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface JwtIgnore {
-    String[] roles() default {};
+    String value() default "";
 }

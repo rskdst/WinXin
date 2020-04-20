@@ -51,24 +51,24 @@
 <style scoped>
   .message {
     width: 100%;
-    height: 60px;
+    height: 1.5rem;
     background: #FFFFFF;
     position: relative;
     margin: 1px auto;
   }
 
   .logo {
-    width: 60px;
-    height: 60px;
+    width: 1.5rem;
+    height: 1.5rem;
     position: absolute;
 
   }
   .photo{
-    width: 50px;
-    height: 50px;
-    border-radius: 5px 5px;
-    margin-left: 5px;
-    margin-top: 5px;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 0.2rem;
+    margin-left: 0.1rem;
+    margin-top: 0.1rem;
 
   }
 
@@ -76,11 +76,12 @@
     padding: 0;
     position: absolute;
     right: 0;
-    width: 20px;
-    height: 20px;
+    width: 0.4rem;
+    height: 0.4rem;
     background: red;
     color:white;
-    line-height: 20px;
+    font-size: 0.3rem;
+    line-height: 0.4rem;
     text-align: center;
     border-radius: 50%;
   }
@@ -88,46 +89,44 @@
     padding: 0;
     position: absolute;
     right: 0;
-    width: 10px;
-    height: 10px;
+    width: 0.3rem;
+    height: 0.3rem;
     background: red;
     border-radius: 50%;
   }
 
   .detail {
     display: inline-block;
-    width: 315px;
+    width: 8.5rem;
     height: 100%;
-    border-bottom: 1px solid #F3F3F3;
-    /*border-bottom: 1px solid red;*/
+    border-bottom: 1px solid #dedede;
     position: absolute;
     right: 0;
   }
 
   .prompt {
     display: inline-block;
-    width: 255px;
-    height: 50px;
-    margin: 5px 0;
+    width: 7rem;
+    height: 1.1rem;
+    margin: 0.2rem 0 0.2rem 0.3rem;
     overflow: hidden;
   }
 
   h5 {
     display: inline-block;
     width: 100%;
-    height: 25px;
-    line-height: 25px;
-    padding-left: 5px;
+    height: 0.6rem;
+    font-size: 0.4rem;
+    line-height: 0.6rem;
 
   }
 
   span {
     display: inline-block;
     width: 100%;
-    height: 25px;
-    font-size: 10px;
-    line-height: 25px;
-    padding-left: 5px;
+    height: 0.5rem;
+    font-size: 0.3rem;
+    line-height: 0.5rem;
     color: #B0B0B0;
   }
 
@@ -135,8 +134,8 @@
     padding: 0;
     list-style: none;
     display: inline-block;
-    width: 60px;
-    height: 60px;
+    width: 1rem;
+    height: 1.5rem;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -144,14 +143,14 @@
   }
 
   li:first-child, li:last-child {
-    height: 30px;
-    font-size: 10px;
-    line-height: 30px;
+    height: 0.75rem;
+    font-size: 0.3rem;
+    line-height: 0.75rem;
     text-align: center;
   }
 
   li img {
-    width: 15px;
-    height: 15px;
+    width: 0.3rem;
+    height: 0.3rem;
   }
 </style>

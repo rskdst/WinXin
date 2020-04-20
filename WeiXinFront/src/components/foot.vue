@@ -69,14 +69,14 @@
     position: relative;
     top: 3%;
     margin: 0 auto;
-    line-height: 45px;
+    line-height: 90%;
   }
 
   ul {
     margin: 0;
     padding: 0;
     width: 100%;
-    font-size: 10px;
+    font-size: 0.3rem;
   }
 
   a {
@@ -87,12 +87,12 @@
 
 
   img {
-    height: 20px;
-    width: 20px;
+    height: 0.6rem;
+    width: 0.6rem;
     position: absolute;
     display: inline-block;
-    left: 15px;
-    top: 5px;
+    left: 0.45rem;
+    top: 0.2rem;
     /*margin: 0 auto;*/
     text-align: center;
   }
@@ -101,31 +101,31 @@
     margin: 0 auto;
     padding: 0;
     list-style: none;
-    width: 50px;
+    width: 1.5rem;
     float: left;
     text-align: center;
   }
 
   ul li:first-child {
-    margin-right: 10px;
+    margin-left: 0.1rem;
+    margin-right: 1.2rem;
   }
 
   ul li:nth-child(1) {
-    margin-right: 55px;
+    margin-right: 1.2rem;
   }
 
   ul li:nth-child(2) {
-    margin-right: 55px;
+    margin-right: 1.2rem;
   }
 
   ul li:last-child {
     float: right;
-    margin-left: 10px;
   }
 
   span {
     position: relative;
-    top: 10px;
+    top: 0.9rem;
   }
 
 </style>

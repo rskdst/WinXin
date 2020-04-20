@@ -34,15 +34,16 @@
     position: relative;
     top: 3%;
     margin: 0 auto;
-    line-height: 45px;
+    font-size: 0.5rem;
+    line-height: 1.5rem;
     /*background: aliceblue;*/
   }
 
   h4 {
     display: inline;
-    margin-left: 10px;
+    font-size: 0.5rem;
+    margin-left: 0.2rem;
   }
-
   a {
     display: inline;
   }
@@ -54,18 +55,18 @@
   }
 
   ul li {
-    width: 50px;
-    margin-right: 10px;
+    width: 1rem;
+    margin-right: 0.2rem;
     float: right;
     text-align: right;
 
   }
 
   li img {
-    width: 25px;
-    height: 25px;
+    width: 0.6rem;
+    height: 0.6rem;
     /*margin-right: 12.5px;*/
-    margin-top: 10px;
+    margin-top: 0.4rem;
   }
 
 

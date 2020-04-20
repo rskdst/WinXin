@@ -1,7 +1,7 @@
 package com.weixin.springbootweixin.Permission.api;
 
 import com.weixin.springbootweixin.utils.Md5;
-import com.weixin.springbootweixin.config.jwtConfig;
+import com.weixin.springbootweixin.config.JwtConfig;
 import com.weixin.springbootweixin.entity.RestApi;
 import com.weixin.springbootweixin.config.JwtIgnore;
 import com.weixin.springbootweixin.utils.jwtUtils;
@@ -13,14 +13,15 @@ import com.weixin.springbootweixin.Permission.service.UserInfoService;
 import javax.servlet.http.HttpServletResponse;
 import java.util.*;
 
-@RestController
+
 @RequestMapping("/api")
+@RestController
 public class UserInfoApi {
 
     @Autowired
     private UserInfoService userInfoService;
     @Autowired
-    private jwtConfig jwtConfig;
+    private JwtConfig jwtConfig;
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @JwtIgnore

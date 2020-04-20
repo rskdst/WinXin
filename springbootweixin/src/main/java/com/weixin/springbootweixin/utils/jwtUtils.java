@@ -2,12 +2,10 @@ package com.weixin.springbootweixin.utils;
 
 
 import com.weixin.springbootweixin.entity.ExceptionApi;
-import com.weixin.springbootweixin.config.jwtConfig;
+import com.weixin.springbootweixin.config.JwtConfig;
 
 import io.jsonwebtoken.*;
-import javax.crypto.spec.SecretKeySpec;
-import javax.xml.bind.DatatypeConverter;
-import java.security.Key;
+
 import java.util.Date;
 
 /**
@@ -47,7 +45,7 @@ public class jwtUtils {
      * @param jwtConfig
      * @return
      */
-    public static String createJWT(String phone, jwtConfig jwtConfig) {
+    public static String createJWT(String phone, JwtConfig jwtConfig) {
         try {
             // 使用HS512加密算法
             SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS512;

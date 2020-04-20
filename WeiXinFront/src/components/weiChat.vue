@@ -105,14 +105,13 @@
 
   #weiChat {
     width: 100%;
-    height: 812px;
     /*background: red;*/
     position: relative;
   }
 
   #w-header {
     width: 100%;
-    height: 50px;
+    height: 1.5rem;
     background: #EEEEEE;
     position: relative;
   }
@@ -123,7 +122,7 @@
 
   #w-footer {
     width: 100%;
-    height: 50px;
+    height: 1.5rem;
     position: absolute;
     bottom: 0;
     background: #F7F7F7;
