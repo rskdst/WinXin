@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    username: root
+    password: 950824
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/weichat?serverTimezone=Asia/Shanghai&useSSL=false&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
+server:
+  port: 8100
+##jwt配置
+jwtconfig:
+  # 密钥, 经过Base64加密, 可自行替换
+  Secret: =k_!u%y7p7-brgx+2u%77d963kp$#4pk_32fnv#zrbbuehq3fo
+  # JWT的签发主体，存入issuer
+  iss: weixin.com
+  # 过期时间，时间戳
+  expiresSecond: 604800000

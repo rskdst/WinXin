@@ -10,11 +10,9 @@
     </div>
     <div class="message">
       <form @submit.prevent="submit">
-        <div class="head-message">
-          <div class="nickname">
-            <label for="nickname">昵称</label>
-            <input type="text" placeholder="例如：陈晨" id="nickname" name="nickname" v-model="messageDict.nickname">
-          </div>
+        <div class="nickname">
+          <label for="nickname" style="border-bottom:1px solid #d8d8d8">昵称</label>
+          <input type="text" placeholder="例如：陈晨" id="nickname" name="nickname" v-model="messageDict.nickname" style="border-bottom:1px solid #d8d8d8">
           <div class="logo">
             <input type="file" ref="file" name="avatar" accept="image/*" @change="add_avatar">
             <img id="touxiang" src="@/assets/weixin/上传头像.png" @click="upload">
@@ -24,7 +22,7 @@
           <div class="address">
             <label>国家/地区</label>
             <select name="address" v-model="messageDict.address">
-              <option :value="address.value" v-for="address in addressList">
+              <option :value="address.value" v-for="address in addressList" :key="address.value">
                 {{address.name}}
               </option>
             </select>
@@ -41,7 +39,7 @@
         <div class="foot-message">
           <div class="agree">
             <img :src="agree?agreeImg.agreePicture:agreeImg.Picture" @click="changeAgree">
-            <p>已阅读并同意<a href="#" style="text-decoration: none;color: #586b95">《软件许可及服务协议》</a></p>
+            <span>已阅读并同意<a href="#" style="text-decoration: none;color: #586b95">《软件许可及服务协议》</a></span>
           </div>
           <div class="register">
             <input type="submit" value="注册"
@@ -115,7 +113,7 @@
             phone: this.messageDict.phone,
             avatar: this.messageDict.avatar,
           },).then(res => {
-            if (res.status === 200) {
+            if (res.code === 1) {
               console.log("用户创建成功！");
               this.$router.push({path: "/login"})
             } else {
@@ -138,170 +136,155 @@
 
 <style scoped>
   .head {
-    height: 50px;
+    height: 5vh;
   }
 
   .close {
     display: block;
     position: relative;
-    left: 10px;
-    top: 10px;
-    width: 32px;
-    height: 32px;
+    left: 1vmin;
+    top: 1vmin;
+    width: 10vmin;
+    height: 10vmin;
   }
 
   .the-way {
     width: 100%;
-    height: 100px;
-    line-height: 100px;
+    height: 15vh;
+    line-height: 15vh;
   }
 
   h3 {
-    letter-spacing: 5px;
-    padding-left: 20px;
+    letter-spacing: 1vmin;
+    padding-left: 4%;
+    font-size: 1rem;
   }
 
   .message {
-    width: 100%;
-    height: 200px;
-    /*background: red;*/
+    width: 92%;
+    height: 32vh;
+    margin: 0 4%;
+    /* background: red; */
   }
 
   form {
-    font-size: 16px;
-  }
-
-  .head-message {
-    width: 100%;
-    height: 50px;
+    font-size: 0.5rem;
   }
 
   .nickname {
-    width: 290px;
-    float: left;
+    width: 100%;
+    height: 8vh;
     /*position: relative;*/
-    display: inline-block;
-    line-height: 50px;
-    border-bottom: 1px solid #d8d8d8;
   }
 
   label {
-    display: inline-block;
+    float: left;
     /*position: relative;*/
-    padding-left: 20px;
-    width: 80px;
+    width: 29%;
+    line-height: 8vh;
   }
 
   input {
-    display: inline-block;
+    float: left;
     /*position: relative;*/
-    width: 180px;
+    width: 51%;
     background: rgba(0, 0, 0, 0);
     border: none;
-    font-size: 16px;
+    font-size: 0.5rem;
     outline: none;
     font-family: 幼圆;
   }
 
   .logo {
-    width: 50px;
-    height: 50px;
+    width: 20%;
+    height: 8vh;
     float: right;
-    margin-right: 20px;
-    display: inline-block;
   }
 
   .logo input {
     display: none;
-    width: 50px;
-    height: 50px;
+    width: 100%;
+    height: 100%;
   }
 
   .mid-message {
     width: 100%;
-    height: 100px;
-    margin-top: 1px;
+    height: 16vh;
+    border-bottom:1px solid #d8d8d8;
   }
 
   .address {
     width: 100%;
-    height: 50px;
-    line-height: 50px;
+    height: 8vh;
+    line-height: 8vh;
   }
 
   select {
-    display: inline-block;
-    width: 120px;
+    float: left;
+    width: 71%;
     color: #06af54;
-    height: 49px;
+    height: 8vh;
     border: none;
     outline: none;
     -webkit-appearance: none;
     background: rgba(0, 0, 0, 0);
-    font-size: 16px;
+    font-size: 0.5rem;
     font-family: 幼圆;
   }
 
   .phone {
     width: 100%;
-    height: 50px;
+    height: 8vh;
     border-bottom: 1px solid #d8d8d8;
   }
 
   .password {
     width: 100%;
-    height: 50px;
-    margin-top: 1px;
+    height: 8vh;
     border-bottom: 1px solid #d8d8d8;
   }
 
   .foot-message {
+    position: relative;
     width: 100%;
-    height: 100px;
-    margin-top: 1px;
+    height: 12vh;
   }
 
   .agree {
+    position:relative;
     width: 100%;
-    height: 50px;
-    position: relative;
+    height: 6vh;
+    line-height: 6vh;
+    text-align: center;
+    float: left;
   }
 
   .agree img {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: inline-block;
-    position: relative;
-    top: 25px;
-    left: 60px;
-
+    vertical-align:middle ;
+    width: 0.6rem;
+    height: 0.6rem;
   }
 
-  .agree p {
-    display: inline-block;
-    width: 250px;
-    height: 30px;
-    line-height: 30px;
-    font-size: 12px;
-    position: relative;
-    top: 20px;
-    left: 60px;
-
+  .agree span{
+    vertical-align:middle ;
+    font-size: 0.3rem;
   }
 
   .register {
     width: 100%;
-    height: 50px;
+    height: 6vh;
   }
 
   .register input {
-    width: 355px;
-    height: 50px;
-    margin: 0 10px;
-    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    font-size: 0.5rem;
     font-family: 幼圆;
-    border-radius: 5px;
-    letter-spacing: 3px;
+    border-radius: 1vmin;
+    letter-spacing: 2vmin;
+  }
+  option{
+    width: 3rem;
+    height: 2rem;
   }
 </style>

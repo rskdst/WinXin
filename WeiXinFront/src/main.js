@@ -5,8 +5,10 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 import qs from "qs";
+import "lib-flexible"
 
-axios.defaults.baseURL = "http://127.0.0.1:8000";
+// axios.defaults.baseURL = "http://127.0.0.1:8000";
+axios.defaults.baseURL = "http://127.0.0.1:8100";
 
 Vue.config.productionTip = false;
 
@@ -37,7 +39,7 @@ axios.interceptors.response.use(
     return response;
   },
   error => {
-    let code = error.response.data.data.code;
+    let code = error.response.data.code;
     if(code === "-1"){
       console.log("token认证失败，等重新登陆");
       router.push({path:"./login"});

@@ -48,7 +48,6 @@
   }
 
   ul {
-    width: 200px;
     display: inline;
     list-style: none;
     margin-right: 0;

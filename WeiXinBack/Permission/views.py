@@ -22,7 +22,7 @@ class Register(APIView):
     def post(self,req):
         phone = req.POST.get("phone")
         if UserInfo.objects.filter(phone=phone):
-            return JsonResponse(jsonData(400,"用户已存在",{"code":0,"data":{},"message":"用户已存在"}))
+            return JsonResponse(jsonData(0,"","用户已存在"))
         else:
             password = encryption(req.POST.get("password"))
             avatar_url = ""
@@ -40,7 +40,7 @@ class Register(APIView):
                 password=password,
                 avatar=avatar_url,
             )
-            return JsonResponse(jsonData(200,"用户创建成功",{"code":1,"data":{},"message":"用户创建成功"}))
+            return JsonResponse(jsonData(1,"","用户创建成功"))
 
 
 class Login(APIView):
@@ -54,14 +54,14 @@ class Login(APIView):
                 try:
                     token = req.META.get("HTTP_AUTHORIZATION")
                     payload = jwt.decode(bytes(token, encoding="utf-8"), settings.SECRET_KEY, True, algorithms=["HS512"], )
-                    return JsonResponse(jsonData(200, "登陆成功", {"code":1,"data":{},"message":""}))
+                    return JsonResponse(jsonData(1,"",""))
                 except:
                     print("重新生成token")
                     token = create_token(phone)
-                    return JsonResponse(jsonData(200,"登陆成功",{"code":1,"data":{"token":token},"message":""}))
+                    return JsonResponse(jsonData(1,{"token":token},""))
             else:
-                return JsonResponse(jsonData(401,"密码错误",{"code":0,"data":{},"message":"密码错误"}))
+                return JsonResponse(jsonData(0,"","密码错误"))
         else:
-            return JsonResponse(jsonData(404,"用户未创建",{"code":0,"data":{},"message":"用户未创建"}))
+            return JsonResponse(jsonData(-2,"","用户未创建"))
 
 
