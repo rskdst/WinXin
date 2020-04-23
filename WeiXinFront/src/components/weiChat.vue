@@ -1,11 +1,12 @@
 <template>
   <div id="weiChat">
+    <add style="position:absolute;right:3vmin;top:1.6rem;z-index:1" v-show="addFlag" :addFlag="addFlag"></add>
     <div id="w-header" v-show="headflag">
-      <biaoti :setMsgNum="msgNum" :setName="headName" :numShow="numShow"></biaoti>
+      <biaoti :setMsgNum="msgNum" :setName="headName" :numShow="numShow" @addFlag="getaddFlag"></biaoti>
     </div>
     <div id="content">
       <transition mode="out-in">
-        <weixin @getMsgNum="getMsgNum" v-if="flag==weixin"></weixin>
+        <weixin @getMsgNum="getMsgNum" v-if="flag==weixin" ref="weixin"></weixin>
       </transition>
       <transition mode="out-in">
         <TongXunLu v-if="flag==tongxunlu"></TongXunLu>
@@ -26,6 +27,7 @@
   import weixin from "./weixin/weixin"
   import TongXunLu from "./tongxunlu/tongxunlu"
   import wo from "./wo/wo"
+  import add from "./add"
 
   export default {
     name: "weiChat",
@@ -39,6 +41,7 @@
         tongxunlu: 1,
         wo: 3,
         numShow:true,
+        addFlag:false,
       }
     },
     components: {
@@ -47,6 +50,7 @@
       weixin,
       TongXunLu,
       wo,
+      add,
     },
     methods: {
       // 获取未读消息的数量
@@ -59,6 +63,7 @@
       },
       // 切换主界面
       Switch(index,data) {
+        this.addFlag = false;
         if (index === 3) {
           this.numShow = false;
           this.headflag = false
@@ -70,18 +75,28 @@
           this.headflag = true
         }
         this.headName = data.name;
-        this.flag = index
-
-      }
+        this.flag = index;
+      },
+      getaddFlag(data) {
+        this.addFlag = !this.addFlag;
+        console.log("111111111"+this.addFlag)
+      },
+      showaddFlag(data) {
+        console.log(this)
+        this.addFlag = true;
+      },
     },
     mounted() {
       let n = 0;
-      this.$children[1].msgList.forEach(function (data) {
+      this.$refs.weixin.msgList.forEach(function (data) {
         n += data.num
       });
       this.msgNum = n;
-
-    }
+      document.body.addEventListener('click',()=>{
+            this.addFlag = false;
+        },false);
+    },
+    
   }
 
 

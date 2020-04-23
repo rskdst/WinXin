@@ -3,7 +3,7 @@
     <h4>{{setName}}</h4>
     <span v-show="numShow">({{setMsgNum}})</span>
     <ul>
-      <li><img src="@/assets/weixin/添加.png"></li>
+      <li @click.stop="add"><img src="@/assets/weixin/添加.png"></li>
       <li><img src="@/assets/weixin/搜索.png"></li>
     </ul>
   </div>
@@ -15,14 +15,16 @@
     props: [
       'setMsgNum',
       'setName',
-      'numShow'
+      'numShow',
     ],
     data() {
       return {
       }
     },
     methods: {
-
+      add(){
+        this.$emit("addFlag", 1)
+      }
     },
   }
 </script>

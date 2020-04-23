@@ -11,14 +11,19 @@ import "lib-flexible"
 axios.defaults.baseURL = "http://127.0.0.1:8100";
 
 Vue.config.productionTip = false;
-
+// 定义全局点击函数
+Vue.prototype.globalClick = function(callback) {
+  document.getElementById("content").onclick = function() {
+    callback();
+  };
+};
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   components: {App},
-  template: '<App/>'
-});
+  template: '<App/>',
+})
 
 // aioxs添加请求拦截器
 axios.interceptors.request.use(

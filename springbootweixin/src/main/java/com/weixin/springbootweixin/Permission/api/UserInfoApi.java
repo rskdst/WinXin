@@ -27,7 +27,6 @@ public class UserInfoApi {
     @JwtIgnore
     public RestApi<String> register(String nickname,Integer address,String phone,String password,String avatar)
     {
-        Map<String,String> data= new HashMap<>();
         try {
             String md5Password = Md5.getMd5(password);
             UserInfo userinfo = new UserInfo();

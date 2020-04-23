@@ -32,10 +32,7 @@ img {
   border-radius: 0.2rem;
 }
 p {
-  float: left;
-  padding-left: 0.3rem;
-  width: 8.2rem;
-  height: 1.5rem;
+  margin-left: 1.6rem;
   font-size: 0.5rem;
   line-height: 1.5rem;
   border-bottom: 1px solid #dedede;

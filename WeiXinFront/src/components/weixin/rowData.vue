@@ -1,9 +1,11 @@
 <template>
   <div class="message"  @click="showTip">
-    <div class="logo">
-      <span class="tip" v-show="!remindflag">{{number}}</span>
-      <span class="remind" v-show="remindflag"></span>
-      <img class="photo" v-bind:src="address" alt="">
+    <div class="touxiang">
+      <div class="logo">
+        <span class="tip" v-show="!remindflag">{{number}}</span>
+        <span class="remind" v-show="remindflag"></span>
+        <img class="photo" v-bind:src="address" alt="">
+      </div>
     </div>
     <div class="detail">
       <div class="prompt">
@@ -56,13 +58,16 @@
     position: relative;
     margin: 1px auto;
   }
-
+  .touxiang{
+    width: 15%;
+    display: inline-block;
+  }
   .logo {
     width: 1.5rem;
     height: 1.5rem;
     position: absolute;
-
   }
+
   .photo{
     width: 1.3rem;
     height: 1.3rem;
@@ -73,7 +78,6 @@
   }
 
   .tip{
-    padding: 0;
     position: absolute;
     right: 0;
     width: 0.4rem;
@@ -96,19 +100,18 @@
   }
 
   .detail {
-    display: inline-block;
-    width: 8.5rem;
+    /* display: inline-block; */
+    float: right;
+    width: 83.1%;
     height: 100%;
     border-bottom: 1px solid #dedede;
-    position: absolute;
-    right: 0;
   }
 
   .prompt {
     display: inline-block;
     width: 7rem;
     height: 1.1rem;
-    margin: 0.2rem 0 0.2rem 0.3rem;
+    margin: 0.2rem 0;
     overflow: hidden;
   }
 
@@ -137,7 +140,7 @@
     width: 1rem;
     height: 1.5rem;
     position: absolute;
-    right: 0;
+    right: 1vmin;
     bottom: 0;
     color: #B0B0B0;
   }
